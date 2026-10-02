@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Аренда складских ячеек</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ============================================ -->
+  <!-- ЭКРАН 1: Авторизация                         -->
+  <!-- ============================================ -->
+  <section id="screen-auth" class="screen active">
+    <div class="card">
+      <h1>Складской сервис</h1>
+      <p class="subtitle">Аренда складских ячеек</p>
+
+      <div class="tabs">
+        <button class="tab active" data-tab="login">Вход</button>
+        <button class="tab" data-tab="register">Регистрация</button>
+      </div>
+
+      <form id="form-auth">
+        <input id="auth-email"    type="email"    placeholder="Email" required>
+        <input id="auth-fullname" type="text"     placeholder="ФИО" class="hidden">
+        <input id="auth-password" type="password" placeholder="Пароль (мин. 6)" required minlength="6">
+        <button type="submit" id="auth-submit">Войти</button>
+      </form>
+
+      <p id="auth-error" class="error"></p>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- ЭКРАН 2: Приложение                          -->
+  <!-- ============================================ -->
+  <section id="screen-app" class="screen">
+    <header class="topbar">
+      <h2>Складской сервис</h2>
+      <div class="user-box">
+        <span id="user-name"></span>
+        <button id="btn-logout">Выйти</button>
+      </div>
+    </header>
+
+    <nav class="tabs-main">
+      <button class="tab-main active" data-view="cells">Ячейки</button>
+      <button class="tab-main" data-view="warehouses">Склады</button>
+      <button class="tab-main" data-view="rentals">Мои аренды</button>
+    </nav>
+
+    <main>
+      <div id="view-cells"      class="view active"></div>
+      <div id="view-warehouses" class="view"></div>
+      <div id="view-rentals"    class="view"></div>
+    </main>
+  </section>
+
+  <!-- Скрипты: сначала mock.js, потом app.js -->
+  <script src="mock.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
